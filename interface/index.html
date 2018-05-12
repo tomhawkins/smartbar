@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<nav>
+    <div class="time"><p>13:51</p></div>
+    <div class="temp"><p>3.5</p></div>
+    <div class="date"><p>11/05/2018</p></div>
+</nav>
+<section class="content">
+    <div class="beer">
+        <a href="#" id="beeropen" class="beer-but">
+            <img src="img/beer.svg" width="50" class="beer-logo">
+            <h2>12</h2>
+        </a>
+
+        <div class="beer-overlay">
+            <a class="beer-close" href="#"><i class="material-icons">close</i></a>
+            <h3>Inventory</h3>
+            <div class="inventory-container">
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+                <div class="inv-tile">
+                    <img src="img/fosters-logo.jpg">
+                    <h4>Fosters</h4>
+                    <p>4</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="spotify" style="background-image: url('img/glass-animals-cover.jpg')">
+        <img src="img/spotify-logo.svg" width="50" class="spotify-logo">
+        <div class="spot-text">
+            <h2>Life Itself</h2>
+            <p>Glass Animals</p>
+        </div>
+        <div class="spot-controls">
+            <a href="#"><i class="material-icons">shuffle</i></a>
+            <a href="#"><i class="material-icons">skip_previous</i></a>
+            <a href="#"><i class="material-icons">play_circle_outline</i><!-- <i class="material-icons">pause_circle_outline</i> --></a>
+            <a href="#"><i class="material-icons">skip_next</i></a>
+            <a href="#"><i class="material-icons">repeat</i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    $('#beeropen').on('click', function(e) {
+        $('.beer-overlay').toggleClass("open"); //you can list several class names
+        e.preventDefault();
+    });
+
+    $('.beer-close').on('click', function(e) {
+        $('.beer-overlay').toggleClass("open"); //you can list several class names
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>
