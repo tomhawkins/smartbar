@@ -28,7 +28,17 @@
         <div class="add-overlay">
             <a class="beer-add-close" href="#"><i class="material-icons">close</i></a>
             <h2>Add to fridge</h2>
-            <p>Place a drink of the pad, select quantity and submit.</p>
+            <p>Selected Can: <strong>Fosters</strong>.</p>
+            <div class="brand-list">
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+                <div class="brand-item" id="fosters" style="background-image: url('img/fosters-logo.jpg')"></div>
+            </div>
             <div class="add-counter">
                 <div id="add-minus"><i class="material-icons">remove_circle</i></div>
                 <h2>1</h2>
@@ -142,6 +152,24 @@
         e.preventDefault();
     });
 
+    $('.brand-item').on('click', function(e) {
+        $('.brand-item').removeClass("selected");
+        $(this).toggleClass("selected"); //you can list several class names
+        e.preventDefault();
+    });
+
+    $('.color').on('click', function(e) {
+        $('.color').removeClass("selected");
+        $('.switch').removeClass("red pink purple blue teal green orange");
+        $('.switch').addClass(this.id);
+        $(this).toggleClass("selected"); //you can list several class names
+        e.preventDefault();
+    });
+
+    $('.non-color').on('click', function(e) {
+        $(this).toggleClass("selected"); //you can list several class names
+        e.preventDefault();
+    });
 
 </script>
     
