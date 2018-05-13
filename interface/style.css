@@ -62,6 +62,22 @@ a {
   a:focus {
     outline: 0; }
 
+h1 {
+  font-weight: bold;
+  font-size: 24px; }
+
+.text-center {
+  text-align: center; }
+
+p {
+  line-height: 1.5; }
+
+strong {
+  font-weight: bold; }
+
+.large-p {
+  font-size: 24px; }
+
 nav {
   background: #424242;
   color: white;
@@ -70,20 +86,24 @@ nav {
   justify-content: space-between;
   padding: 0 20px;
   align-items: center;
-  height: 86px; }
+  height: 64px; }
   nav > div {
     flex-grow: 1;
     flex-basis: 0; }
     nav > div:nth-of-type(2) {
-      text-align: center; }
+      text-align: center;
+      padding-left: 64px; }
     nav > div:nth-of-type(3) {
-      text-align: right; }
+      text-align: right;
+      padding-right: 64px; }
 
 .content {
   padding: 50px;
   display: flex;
   flex-direction: row;
-  height: 100%; }
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0; }
   .content > div {
     height: 100%;
     flex-grow: 1;
@@ -94,17 +114,79 @@ nav {
 .beer {
   background: #3f92e9;
   margin-right: 25px;
-  overflow: hidden; }
-
-#beeropen {
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   text-decoration: none;
   color: white; }
+
+.beer-button-container {
+  display: flex;
+  flex-direction: row; }
+  .beer-button-container > div {
+    padding: 20px; }
+    .beer-button-container > div > i {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      background: white;
+      color: #3f92e9;
+      display: flex;
+      font-size: 40px;
+      justify-content: center;
+      align-items: center; }
+      .beer-button-container > div > i .material-icons {
+        font-size: 40px; }
+
+.add-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: top 1s;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: #6dacee;
+  padding: 50px 25px 25px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .add-overlay p {
+    line-height: 1.5; }
+  .add-overlay.open {
+    top: 0; }
+
+.add-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  .add-counter .material-icons {
+    font-size: 40px; }
+  .add-counter > div {
+    padding: 20px; }
+  .add-counter h2 {
+    margin-bottom: 0; }
+
+.add-submit {
+  padding: 20px;
+  border-radius: 50px;
+  background: white;
+  color: #3f92e9; }
+
+.beer-add-close {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 20px; }
+  .beer-add-close .material-icons {
+    font-size: 40px; }
 
 .beer-overlay {
   position: absolute;
@@ -153,6 +235,8 @@ nav {
   top: 0px;
   right: 0px;
   padding: 20px; }
+  .beer-close .material-icons {
+    font-size: 40px; }
 
 .spotify {
   margin-left: 25px;
@@ -188,9 +272,84 @@ nav {
   text-align: center;
   max-width: 90%; }
 
+.spot-controls .active {
+  color: #1ED760; }
+  .spot-controls .active i {
+    color: #1ED760; }
+
 h2 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem; }
+
+.fab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  align-items: center; }
+  .fab .hidden {
+    transition: transform .5s;
+    transform: scale(0); }
+  .fab.fab-open .hidden {
+    transform: scale(1); }
+
+.fab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  color: white; }
+  .fab-btn.color {
+    box-sizing: border-box;
+    transition: transform .5s, border .5s;
+    border: 0px solid white; }
+    .fab-btn.color.selected {
+      border: 4px solid white; }
+  .fab-btn.non-color {
+    transition: transform .5s, background .5s; }
+    .fab-btn.non-color .material-icons {
+      transition: color .5s; }
+    .fab-btn.non-color.selected {
+      background: white; }
+      .fab-btn.non-color.selected .material-icons {
+        color: #414141; }
+  .fab-btn.small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+
+.red {
+  background: #f54040; }
+
+.pink {
+  background: #f576e1; }
+
+.purple {
+  background: #ac33f5; }
+
+.blue {
+  background: #3e5df5; }
+
+.teal {
+  background: #69dbf5; }
+
+.green {
+  background: #75f572; }
+
+.orange {
+  background: #f57d56; }
+
+.strobe {
+  background: #414141; }
+
+.power {
+  background: #414141; }
 
 /*# sourceMappingURL=style.css.map */

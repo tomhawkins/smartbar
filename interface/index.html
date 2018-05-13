@@ -12,15 +12,31 @@
 <body>
 <nav>
     <div class="time"><p>13:51</p></div>
-    <div class="temp"><p>3.5</p></div>
+    <div class="title"><h1>Project Bar 2.0</h1></div>
     <div class="date"><p>11/05/2018</p></div>
 </nav>
 <section class="content">
     <div class="beer">
-        <a href="#" id="beeropen" class="beer-but">
-            <img src="img/beer.svg" width="50" class="beer-logo">
-            <h2>12</h2>
-        </a>
+        <img src="img/beer.svg" width="100" class="beer-logo">
+        <h2>12</h2>
+        <p class="text-center">The fridge is currently:<br><strong class="large-p"><span class="temp">3</span>°C</strong></p>
+        <div class="beer-button-container">
+            <div id="addopen" class="beer-btn"><i class="material-icons">add</i></div>
+            <div id="beeropen" class="beer-btn"><i class="material-icons">view_list</i></div>
+        </div>
+
+        <div class="add-overlay">
+            <a class="beer-add-close" href="#"><i class="material-icons">close</i></a>
+            <h2>Add to fridge</h2>
+            <p>Place a drink of the pad, select quantity and submit.</p>
+            <div class="add-counter">
+                <div id="add-minus"><i class="material-icons">remove_circle</i></div>
+                <h2>1</h2>
+                <div id="add-plus"><i class="material-icons">add_circle</i></div>
+
+            </div>
+            <div class="add-submit">Add to fridge</div>
+        </div>
 
         <div class="beer-overlay">
             <a class="beer-close" href="#"><i class="material-icons">close</i></a>
@@ -74,7 +90,7 @@
             <p>Glass Animals</p>
         </div>
         <div class="spot-controls">
-            <a href="#"><i class="material-icons">shuffle</i></a>
+            <a  class="active" href="#"><i class="material-icons">shuffle</i></a>
             <a href="#"><i class="material-icons">skip_previous</i></a>
             <a href="#"><i class="material-icons">play_circle_outline</i><!-- <i class="material-icons">pause_circle_outline</i> --></a>
             <a href="#"><i class="material-icons">skip_next</i></a>
@@ -82,7 +98,24 @@
         </div>
     </div>
 </section>
+
+
+
 <div id="error"><p></p></div>
+
+<div class="fab">
+    <div class="fab-btn switch red"><i class="material-icons">color_lens</i></div>
+    <div class="fab-btn small hidden color red selected" id="red"></div>
+    <div class="fab-btn small hidden color pink" id="pink"></div>
+    <div class="fab-btn small hidden color purple" id="purple"></div>
+    <div class="fab-btn small hidden color blue" id="blue"></div>
+    <div class="fab-btn small hidden color teal" id="teal"></div>
+    <div class="fab-btn small hidden color green" id="green"></div>
+    <div class="fab-btn small hidden color orange" id="orange"></div>
+    <div class="fab-btn small hidden strobe non-color" id="strobe"><i class="material-icons">flare</i></div>
+    <div class="fab-btn small hidden power non-color selected" id="power"><i class="material-icons">power_settings_new</i></div>
+
+</div>
 <script>
     $('#beeropen').on('click', function(e) {
         $('.beer-overlay').toggleClass("open"); //you can list several class names
@@ -93,6 +126,23 @@
         $('.beer-overlay').toggleClass("open"); //you can list several class names
         e.preventDefault();
     });
+
+    $('.switch').on('click', function(e) {
+        $('.fab').toggleClass("fab-open"); //you can list several class names
+        e.preventDefault();
+    });
+
+    $('#addopen').on('click', function(e) {
+        $('.add-overlay').toggleClass("open"); //you can list several class names
+        e.preventDefault();
+    });
+
+    $('.beer-add-close').on('click', function(e) {
+        $('.add-overlay').toggleClass("open"); //you can list several class names
+        e.preventDefault();
+    });
+
+
 </script>
     
 <script type="text/javascript">
@@ -106,7 +156,7 @@
         var colon = ":"
         if(subSec)colon = " ";
         subSec = !subSec;
-        document.getElementsByClassName("time")[0].innerHTML = ("0" + d.getHours()).slice(-2) + colon + ("0" + d.getMinutes()).slice(-2);
+        document.getElementsByClassName("time")[0].innerHTML = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
     }, 1000)
 </script>
 <style>
