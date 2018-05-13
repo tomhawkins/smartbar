@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
 <nav>
@@ -26,7 +27,7 @@
             <h3>Inventory</h3>
             <div class="inventory-container">
 
-                <div class="inv-tile">
+                <!--<div class="inv-tile">
                     <img src="img/fosters-logo.jpg">
                     <h4>Fosters</h4>
                     <p>4</p>
@@ -60,7 +61,7 @@
                     <img src="img/fosters-logo.jpg">
                     <h4>Fosters</h4>
                     <p>4</p>
-                </div>
+                </div>-->
 
             </div>
         </div>
@@ -81,7 +82,7 @@
         </div>
     </div>
 </section>
-
+<div id="error"><p></p></div>
 <script>
     $('#beeropen').on('click', function(e) {
         $('.beer-overlay').toggleClass("open"); //you can list several class names
@@ -93,5 +94,49 @@
         e.preventDefault();
     });
 </script>
+    
+<script type="text/javascript">
+    var d = new Date();
+    document.getElementsByClassName("time")[0].innerHTML = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+    document.getElementsByClassName("temp")[0].innerHTML = "3.5";
+    document.getElementsByClassName("date")[0].innerHTML = ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth()+1)).slice(-2) + "/" + d.getFullYear();
+    var subSec = true;
+    var interval = setInterval(function(){
+        d = new Date();
+        var colon = ":"
+        if(subSec)colon = " ";
+        subSec = !subSec;
+        document.getElementsByClassName("time")[0].innerHTML = ("0" + d.getHours()).slice(-2) + colon + ("0" + d.getMinutes()).slice(-2);
+    }, 1000)
+</script>
+<style>
+    html,body{
+        height: 100%;
+    }
+    #error{
+        width: 80%;
+        height: 70%;
+        background-color: darkslategray;
+        opacity: 0;
+        display: none;
+        margin: auto;
+        color: white;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 50%;
+        bottom: 0px;
+        -webkit-transition: opacity 0.5s, top 0.5s;
+        transition: opacity 0.5s, top 0.5s;
+    }
+    
+    #error p{
+        text-align: center;
+        padding: 2%;
+        width: 100%;
+        margin: auto;
+        
+    }
+</style>
 </body>
 </html>
